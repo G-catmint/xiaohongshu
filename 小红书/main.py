@@ -5,22 +5,22 @@ import execjs
 class XiaoHongShu:
     def __init__(self):
         self.headers = {
-    "authority": "edith.xiaohongshu.com",
-    "accept": "application/json, text/plain, */*",
-    "accept-language": "zh-CN,zh;q=0.9",
-    "cache-control": "no-cache",
-    "origin": "https://www.xiaohongshu.com",
-    "pragma": "no-cache",
-    "referer": "https://www.xiaohongshu.com/",
-    "^sec-ch-ua": "^\\^Chromium^^;v=^\\^122^^, ^\\^Not(A:Brand^^;v=^\\^24^^, ^\\^Google",
-    "sec-ch-ua-mobile": "?0",
-    "^sec-ch-ua-platform": "^\\^Windows^^^",
-    "sec-fetch-dest": "empty",
-    "sec-fetch-mode": "cors",
-    "sec-fetch-site": "same-site",
-    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
-    "x-b3-traceid": "c4b863585f68e58c",
-}
+            "authority": "edith.xiaohongshu.com",
+            "accept": "application/json, text/plain, */*",
+            "accept-language": "zh-CN,zh;q=0.9",
+            "cache-control": "no-cache",
+            "origin": "https://www.xiaohongshu.com",
+            "pragma": "no-cache",
+            "referer": "https://www.xiaohongshu.com/",
+            "^sec-ch-ua": "^\\^Chromium^^;v=^\\^122^^, ^\\^Not(A:Brand^^;v=^\\^24^^, ^\\^Google",
+            "sec-ch-ua-mobile": "?0",
+            "^sec-ch-ua-platform": "^\\^Windows^^^",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "same-site",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+            "x-b3-traceid": "c4b863585f68e58c",
+        }
         self.url = "https://edith.xiaohongshu.com/api/sns/web/v2/comment/page"
         self.params = {
             "note_id": "660c4798000000001a00e82a",
