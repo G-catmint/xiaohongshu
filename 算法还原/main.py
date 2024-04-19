@@ -1,3 +1,9 @@
+"""
+本代码只适用于https://edith.xiaohongshu.com/api/sns/web/v1/homefeed接口 
+data参数什么的 请自行改进
+仅供交流学习 请勿用作商业用途
+"""
+
 import time
 import requests
 import execjs
@@ -47,14 +53,10 @@ class Xhs:
 
 
 if __name__ == '__main__':
+    # 请补充自己的cookie
     cookie = {
-        "abRequestId": "183b201e-5372-5614-81d3-9944be6b681d",
-        "webBuild": "4.13.1",
-        "xsecappid": "xhs-pc-web",
-        "a1": "18ef3993899ddm7laqnf4pz4i65848het08ta1dv850000148635",
-        "webId": "ff424613890e029bd733d62e087bd9b1",
-        "gid": "yYdiqjj4qK98yYdiqjjqY8yfjjff6W10AIi4YhYUu43K2928Y4Yxd0888y4YKq28YdiDyKKj",
-        "web_session": "030037a112e4003994e738f659214a5115c33e"
+        "a1": "",
+        "web_session": ""
     }
     xhs = Xhs()
     xhs.req_info(cookie)
