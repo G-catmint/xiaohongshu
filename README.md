@@ -10,6 +10,7 @@
 
 球球点个star ![T_ZKW6KJ_X{% %P_AY$`( X](https://github.com/G-catmint/xiaohongshu/assets/114072401/7e0ebd14-8074-429c-84cf-91d128823b4e) 吧
 
-![QQ截图20240414195302](https://github.com/G-catmint/xiaohongshu/assets/114072401/6ff41d4d-9956-4b3b-b70d-8372073df381)
+![Uploading QQ截图20240419094306.png…]()
+
 
 
