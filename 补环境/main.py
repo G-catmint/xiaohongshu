@@ -54,13 +54,8 @@ class Xhs:
 if __name__ == '__main__':
     # 请补充自己的cookie
     cookie = {
-        "abRequestId": "6d996cd6-ccec-5200-b7de-52ccd892b90f",
-        "webBuild": "4.13.1",
-        "xsecappid": "xhs-pc-web",
-        "a1": "18ef441eb51kudwugf5gf5b0eaw9g90bioqijc7p750000287221",
-        "webId": "84598e75435d73e629d80fe8757c26e3",
-        "gid": "yYdi44yiKy3DyYdi44ydDlSW2yT7fE7ki2kiAUW2D8d0E328jkj8DV888JYWJJy8KD0W0q0q",
-        "web_session": "030037a1128fd23903ebea9d59214ade1b1b30"
+        "a1": "",
+        "web_session": ""
     }
     xhs = Xhs()
     xhs.req_info(cookie)
