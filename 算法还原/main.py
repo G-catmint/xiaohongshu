@@ -30,36 +30,33 @@ class Xhs:
             'X-S':"",
             'X-T':''
         }
-        self.cookie = {
-            "abRequestId": "1af71b9d-b893-5596-aa61-5f8ccd09cdf5",
-            "webBuild": "4.12.3",
-            "xsecappid": "xhs-pc-web",
-            "a1": "18eef0ead48n8l9hhznt8d8ejbcdv5zx68wfcm1ek50000232031",
-            "webId": "581213f27d64eab44c080c8487ebce63",
-            "gid": "yYddi8dDK2KyyYddi8d0fY6y4YIY1jxxuI9YEdTfYdVDSi28fh2uCS888JqJ8qy8dqSWWYdd",
-            "web_session": "030037a113d2a36a2bf39bc058214a185bf335"
-        }
+
 
     @staticmethod
     def open_js(file, func, *args):
         js = execjs.compile(open(file, encoding='utf-8').read()).call(func, *args)
         return js
 
-    def req_info(self):
-        # self.headers['X-S'] = self.open_js('./js_code.js','get_x_s','/api/sns/web/v1/homefeed',self.data,self.cookie['a1'],self.headers['X-T'])
-        # self.headers['X-T'] = str(int(time.time() * 1000))
-        data = self.open_js('./huanjing.js', 'get_header', '/api/sns/web/v1/homefeed', self.data)
-        self.headers['X-S'] = data['X-s']
-        self.headers['X-T'] = str(data['X-t'])
-        response = requests.post(url=self.url,headers=self.headers,cookies=self.cookie,data=self.datas)
+    def req_info(self,cookie):
+        data = self.open_js('./js_code.js', 'get_x_s', '/api/sns/web/v1/homefeed', self.data,cookie['a1'])
+        self.headers['X-S'] = data[0]
+        self.headers['X-T'] = str(data[1])
+        response = requests.post(url=self.url,headers=self.headers,cookies=cookie,data=self.datas)
         print(response.text)
         print(response)
 
-    def main(self):
-        pass
-
 
 if __name__ == '__main__':
+    cookie = {
+        "abRequestId": "183b201e-5372-5614-81d3-9944be6b681d",
+        "webBuild": "4.13.1",
+        "xsecappid": "xhs-pc-web",
+        "a1": "18ef3993899ddm7laqnf4pz4i65848het08ta1dv850000148635",
+        "webId": "ff424613890e029bd733d62e087bd9b1",
+        "gid": "yYdiqjj4qK98yYdiqjjqY8yfjjff6W10AIi4YhYUu43K2928Y4Yxd0888y4YKq28YdiDyKKj",
+        "web_session": "030037a112e4003994e738f659214a5115c33e"
+    }
     xhs = Xhs()
-    xhs.req_info()
+    xhs.req_info(cookie)
+
 
