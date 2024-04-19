@@ -16,65 +16,7 @@
 //     return my_parse(params);
 // };
 
-// function get_enviroment(proxy_array) {
-//     for (var i = 0; i < proxy_array.length; i++) {
-//         handler = '{\n' +
-//             '    get: function(target, property, receiver) {\n' +
-//             '        appendLogToFile("方法:", "get  ", "对象:", ' +
-//             '"' + proxy_array[i] + '" ,' +
-//             '"  属性:", property, ' +
-//             '"  属性类型:", ' + 'typeof property, ' +
-//             // '"  属性值:", ' + 'target[property], ' +
-//             '"  属性值类型:", typeof target[property]);\n' +
-//             '        return target[property];\n' +
-//             '    },\n' +
-//             '    set: function(target, property, value, receiver) {\n' +
-//             '        appendLogToFile("方法:", "set  ", "对象:", ' +
-//             '"' + proxy_array[i] + '" ,' +
-//             '"  属性:", property, ' +
-//             '"  属性类型:", ' + 'typeof property, ' +
-//             // '"  属性值:", ' + 'target[property], ' +
-//             '"  属性值类型:", typeof target[property]);\n' +
-//             '        return Reflect.set(...arguments);\n' +
-//             '    }\n' +
-//             '}'
-//         eval("const fs = require('fs');\n" +
-//             "function appendLogToFile(a,b,c,d,e,f,g,h,i,j) {\n" +
-//             "    fs.appendFileSync('proxy_logs.txt', a+b+'\t'+c+d+'\t'+e+f+'\t'+g+h+'\t'+i+j + '\\n');\n" +
-//             "};\n"+'try{\n' + proxy_array[i] + ';\n'
-//             + proxy_array[i] + '=new Proxy(' + proxy_array[i] + ', ' + handler + ')}catch (e) {\n' + proxy_array[i] + '={};\n'
-//             + proxy_array[i] + '=new Proxy(' + proxy_array[i] + ', ' + handler + ')}')
-//     }
-// }
-// proxy_array = ['window', 'document', 'location', 'navigator', 'history', 'screen', 'aaa', 'target']
-function get_enviroment(proxy_array) {
-    for (var i = 0; i < proxy_array.length; i++) {
-        handler = '{\n' +
-            '    get: function(target, property, receiver) {\n' +
-            '        console.log("方法:", "get  ", "对象:", ' +
-            '"' + proxy_array[i] + '" ,' +
-            '"  属性:", property, ' +
-            '"  属性类型:", ' + 'typeof property, ' +
-            // '"  属性值:", ' + 'target[property], ' +
-            '"  属性值类型:", typeof target[property]);\n' +
-            '        return target[property];\n' +
-            '    },\n' +
-            '    set: function(target, property, value, receiver) {\n' +
-            '        console.log("方法:", "set  ", "对象:", ' +
-            '"' + proxy_array[i] + '" ,' +
-            '"  属性:", property, ' +
-            '"  属性类型:", ' + 'typeof property, ' +
-            // '"  属性值:", ' + 'target[property], ' +
-            '"  属性值类型:", typeof target[property]);\n' +
-            '        return Reflect.set(...arguments);\n' +
-            '    }\n' +
-            '}'
-        eval('try{\n' + proxy_array[i] + ';\n'
-            + proxy_array[i] + '=new Proxy(' + proxy_array[i] + ', ' + handler + ')}catch (e) {\n' + proxy_array[i] + '={};\n'
-            + proxy_array[i] + '=new Proxy(' + proxy_array[i] + ', ' + handler + ')}')
-    }
-}
-proxy_array = ['window', 'document', 'location', 'navigator', 'history', 'screen', 'aaa', 'target']
+
 canvas = {
     getContext:function (res) {
         console.log("canvas.getContext:",arguments)
@@ -372,10 +314,9 @@ document = {
             return null
         }
     },
-}
+};
 
 
-get_enviroment(proxy_array);
 
 (function() {
     function Sanji() {
@@ -913,12 +854,14 @@ get_enviroment(proxy_array);
 )();
 
 
-document.cookie = "'documentcookie'"
+// document.cookie = "'documentcookie'"
+
+document.cookie = "abRequestId=6d996cd6-ccec-5200-b7de-52ccd892b90f; webBuild=4.13.1; xsecappid=xhs-pc-web; a1=18ef441eb51kudwugf5gf5b0eaw9g90bioqijc7p750000287221; webId=84598e75435d73e629d80fe8757c26e3; gid=yYdi44yiKy3DyYdi44ydDlSW2yT7fE7ki2kiAUW2D8d0E328jkj8DV888JYWJJy8KD0W0q0q; web_session=030037a1128fd23903ebea9d59214ade1b1b3"
 
 function main(url_suffix,data) {
     return window._webmsxyw(url_suffix, data);
 }
 
-console.log(main("/api/sns/web/v2/comment/page?note_id=65f4813b000000001203df8a&cursor=&top_comment_id=&image_formats=jpg,webp,avif"));
+console.log(main("/api/sns/web/v1/homefeed",{'cursor_score': '', 'num': 18, 'refresh_type': 1, 'note_index': 0, 'unread_begin_note_id': '', 'unread_end_note_id': '', 'unread_note_count': 0, 'category': 'homefeed_recommend', 'search_key': '', 'need_num': 8, 'image_formats': ['jpg', 'webp', 'avif'], 'need_filter_image': false}));
 
 
